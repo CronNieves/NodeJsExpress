@@ -1,8 +1,10 @@
 const express = require('express');
 const morgan = require('morgan');
 const hbs = require('hbs');
-require('./hbs/helpers');
 const app = express();
+const port = process.env.PORT || 3000;
+require('./hbs/helpers');
+
 
 
 //Middlewares
@@ -48,6 +50,6 @@ app.get('*', (req, res) => {
 
 
 //Servidor escuchando
-app.listen(3000, function() {
+app.listen(port, function() {
     console.log('Servidor Online');
 });
